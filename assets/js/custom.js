@@ -17,6 +17,15 @@ $(document).ready(function () {
     $("body").css("height", "");
     $(".closebtn2").css("position", "relative");
   });
+
+
+  AOS.init({
+    offset: 120,
+    duration: 1500,
+    easing: 'ease',
+    once: true,
+  });
+
   // header on scroll
   var headertopoption = $(window);
   var headTop = $(".navbar-dark");
@@ -134,41 +143,5 @@ $(document).ready(function () {
     );
     return false;
   });
-
-  function reveal() {
-    var reveals = document.querySelectorAll(".reveal");
-    for (var i = 0; i < reveals.length; i++) {
-      var windowHeight = window.innerHeight;
-      var elementTop = reveals[i].getBoundingClientRect().top;
-      var elementVisible = 180;
-      if (elementTop < windowHeight - elementVisible) {
-        reveals[i].classList.add("slidUp-animation");
-      } else {
-        reveals[i].classList.remove("slidUp-animation");
-      }
-    }
-  }
-  window.addEventListener("scroll", reveal);
-  // To check the scroll position on page load
-  reveal();
-
-  function revealback() {
-    var revealsback = document.querySelectorAll(".revealback");
-    for (var i = 0; i < revealsback.length; i++) {
-      var windowHeight = window.innerHeight;
-      var elementTop1 = revealsback.getBoundingClientRect().top;
-      var elementVisible1 = 180;
-      if (elementTop1 < windowHeight - elementVisible1) {
-        revealsback.classList.add("slidUp-animation");
-      } else {
-        revealsback.classList.remove("slidUp-animation");
-      }
-    }
-  }
-
-  window.addEventListener("scroll", revealback);
-  // To check the scroll position on page load
-  revealback();
-
 
 });
